@@ -1,0 +1,97 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('https://cdn.dribbble.com/users/704067/screenshots/3527937/fb-celebration-dribbble.gif') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'impact', sans-serif;
+}
+h1 {
+    font-size: 2.0em;
+    font-weight: 300;
+    color: #ffeb3b;
+    animation: celebrate 2s ease-in-out infinite;
+    position: absolute;
+    bottom: 50px; 
+    transform: translateX(-50%);
+    z-index: 1;
+    text-shadow: 2px 2px 4px #000;
+}
+h2 {
+    font-size: 5.0em;
+    font-weight: 300;
+    color: #ffeb3b;
+    animation: celebrate 2s ease-in-out infinite;
+    position: absolute;
+    bottom: 50px; 
+    transform: translateX(-50%);
+    z-index: 1;
+    text-shadow: 2px 2px 4px #000;
+}
+audio { 
+    animation: celebrate 2s ease-in-out infinite;
+    position: absolute;
+    top: 50px;   
+}
+@keyframes celebrate {
+    0%, 100% { transform: scale(1); color: #ffeb3b; }
+    33% { color: #ff9800; }
+    66% { color: #f44336; }
+    50% { transform: scale(1.2); }
+}
+.rocket {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 60px;
+    background: radial-gradient(circle, #ff6347, #ff4500);
+    border-radius: 50% 50% 0 0;
+    animation: launch 3s infinite;
+}
+.rocket::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 4px;
+    height: 10px;
+    background: linear-gradient(to top, yellow, red);
+    transform: translateX(-50%);
+}
+.rocket.left {
+    left: 10%;
+    animation-delay: 0.5s;
+}
+.rocket.right {
+    right: 10%;
+    animation-delay: 1.5s;
+}
+@keyframes launch {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-400px) scale(1.2);
+        opacity: 0.7;
+    }
+    80% {
+        transform: translateY(-600px) scale(1.5);
+        opacity: 0.3;
+    }
+}
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1em;
+        text-align: center; 
+    }
+    h2 {
+        font-size: 4em;
+        
+    }
+}
